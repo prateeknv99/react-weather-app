@@ -1,0 +1,67 @@
+.App {
+    height: 100vh;
+    width: 100%;
+    background-image: url('https://images.pexels.com/photos/11744/pexels-photo-11744.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.Navbar{
+    border: 1px solid black;
+    min-height: 9vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: cyan;
+}
+.Nav1{
+    width: 20%;
+    height: inherit;
+    float: left;
+}
+.Nav2{
+    width: 80%;
+    height: inherit;
+    float: right;
+}
+.Main {
+    margin: 0 auto;
+    width: 80%;
+    height: 75vh;
+    margin-top: 5vh;
+}
+.Title {
+    float: left;
+    width: 45%;
+    height: inherit;
+    padding: 2%;
+    color: black;
+}
+.Content {
+    border-left: 1px solid black;
+    float: right;
+    width: 55%;
+    height: inherit;
+    padding: 10px;
+}
+.Form>input {
+    display: inline-block;
+    width: 15vw;
+    height: 5vh;
+    border-radius: 4px;
+    margin-left: 14px;
+    outline: none;
+    border: none;
+    padding: 7px;
+}
+.Form>button {
+    width: 8vw;
+    height: 5vh;
+    margin: 10px;
+    border-radius: 4px;
+    border: none;
+    font-style: oblique
+}
+.Weather {
+    padding: 10px;
+    font-size: 22px;
+}
