@@ -14,17 +14,18 @@ class App extends Component {
     country: undefined,
     humidity: undefined,
     description: undefined,
-    error: undefined
+    error: undefined,
+    showWeather: false
   }
   getWeather = async (e) => {
     e.preventDefault();
+    this.state.showWeather = true;
     const city = e.target.elements.city.value;
     const country = e.target.elements.country.value;
     
     if (city && country) {
-      const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`);
+      const api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`);
       const data = await api_call.json();
-      // console.log(data);
       if (data.message) {
         alert(data.message);
       }
@@ -49,6 +50,7 @@ class App extends Component {
         error: "Please enter correct inputs!"
       });
     }
+    // e.target.Weather.style.display = 'none';
   }
 
   render() {
@@ -59,14 +61,15 @@ class App extends Component {
           <Title />
           <div className="Content">
             <Form call_getWeather={this.getWeather}/>
-            <Weather
-              temperature={this.state.temperature} 
-              city={this.state.city} 
-              country={this.state.country} 
-              humidity={this.state.humidity} 
-              description={this.state.description} 
-              error={this.state.error}
-            />
+            { this.state.showWeather ? 
+              <Weather
+                temperature={this.state.temperature} 
+                city={this.state.city} 
+                country={this.state.country} 
+                humidity={this.state.humidity} 
+                description={this.state.description} 
+                error={this.state.error}
+              /> : null }
           </div>
         </div>
       </div>
